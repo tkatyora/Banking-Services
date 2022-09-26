@@ -1,4 +1,5 @@
 import  json
+import  sys
 thanks = 'Thanks for Banking With Us'
 filename = 'details.json'
 file_surname = 'surname.json'
@@ -9,16 +10,30 @@ class person:
         self.Surname = surname
         self.Pincode = pincode
         self.Balance = balance
-try:
 
-    print('Hie welcome to NITACAGRA BAMKING SERVICES\nRegester your details')
+    def calculate_withdrwal(balance):
+        withdrawal = 0.7 * balance
+        return  withdrawal
+try:
+    # exit = input('Press Q to exit').lower()
+    print('Hie welcome to NITACAGRA BAMKING SERVICES\nRegester your details,'
+          'Press Q if you wish to exit the resistation')
     name = input('\nEnter Your name: ').lower()
     surname = input('Enter Your surname: ').lower()
-    pincode = int(input('Enter Your pincode: '))
+    while True:
+        pincode = int(input('Enter Your pincode: '))
+        confirm_pincode = int(input('ReEnter Your pincode: '))
+
+        if exit == 'q':
+            sys.exit()
+        if pincode == confirm_pincode:
+            break
+        else:
+         print('\nPincode doest match Reenter pincode\n')
     person =person(name,surname,pincode,)
-    details={'name': person.Name ,'surname':person.Surname,'pincode':person.Surname,'balance':person.Balance}
+    details={'name': person.Name ,'surname':person.Surname,'pincode':person.Pincode,'balance':person.Balance}
     # details = [name, surname, pincode]
-    print('Your entered details\n' ,name.title() ,'\n' ,surname.title() , '\n', pincode)
+    print('\nYour entered details\n' ,name.title() ,'\n' ,surname.title() , '\n', pincode)
     choice = input('\nPress  1.Confirm   2.Cancel\n: ')
 
 
