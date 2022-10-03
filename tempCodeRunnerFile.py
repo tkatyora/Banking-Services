@@ -1,1 +1,1 @@
- # print('\nPlease Enter only numbers')
+print(registration())

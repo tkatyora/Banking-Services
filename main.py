@@ -1,6 +1,7 @@
 #importing modules
 import  json
 import operations
+from register import registration
 
 
 #declaring variables
@@ -13,7 +14,7 @@ filename = 'details.json'
 with open(filename, 'r') as read_file:
     content = json.load(read_file)
 
-
+print(content)
 
 
 #program code
@@ -41,6 +42,7 @@ try:
             print('Pinblocked\n',thanks)  
        
     else:
-        print(name.title(),' Please Go and register first')
+        print('\nHie',name.title() , 'Welcome Thanks for choosing us\nRegester your details,')
+        print(registration())
 except(ValueError):
     print('enter only digits')
