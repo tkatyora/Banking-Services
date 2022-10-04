@@ -5,7 +5,5 @@ class persons:
         self.Pincode = pincode
         self.Balance = balance
 
-    def calculate_withdrwal(balance):
-        withdrawal = 0.7 * balance
-        return  withdrawal
+   
     

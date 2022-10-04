@@ -1,5 +1,6 @@
 import  json
 import  sys
+from getpass import getpass
 from person import persons
 
 # defining varibales
@@ -16,8 +17,8 @@ def registration():
         name = input('\nEnter Your name: ').lower()
         surname = input('Enter Your surname: ').lower()
         while True:
-            pincode = int(input('Enter Your pincode: '))
-            confirm_pincode = int(input('ReEnter Your pincode: '))
+            pincode = int(getpass('Enter Your pincode: '))
+            confirm_pincode = int(getpass('ReEnter Your pincode: '))
 
             if exit == 'q':
                 sys.exit()

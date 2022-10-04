@@ -1,1 +1,43 @@
-__pycache__/ 
+concept of mytlihomig in stcp
+Multihoming is the ability of an SCTP association to support multiple IP paths to its peer endpoint
+The benefit of multihoming associations is that it makes the association more fault-tolerant against 
+physical network failures and other issues on the interfaces. It allows re-routing of packets in the 
+event of failure and also provides an alternate path for retransmissions. Every MP supports two XSI 
+IP addresses; therefore,
+ the SCTP multihomed Transport can have only two IP addresses.
+ 
+ Through multihoming we can protect against failures in IP Routing and physical links, from a transport layer protocol.
+ Transport Manager multihoming has the following characteristics:
+When there are multiple IP addresses for an endpoint, one address is designated as the Primary IP Address to receive data.
+
+A single port number is used across the entire address list at an endpoint.
+
+Endpoints exchange lists of addresses during initiation of the connection.
+ The client informs the server about all its IP addresses in the INIT address parameters.
+ The server provides all its IP addresses to the client in INIT-ACK .
+
+For an SCTP Transport acting as an Initiator:
+Both Local IP addresses will be sent in INIT to Adjacent Node.
+
+Both of the Remote IP addresses will be used. If the Primary Peer IP Address is down,
+ then the Transport will re-send INIT to the Secondary Peer IP Address.
+
+For an SCTP Transport acting as a Listener:
+Both Local IP addresses will be sent in INIT-ACK to Adjacent Node.
+A connect can be accepted from either the Primary or Secondary IP Address,
+ and the connection can be established. It is expected that if the Primary Peer
+ IP Address is unreachable, the connection can be established using the Secondary Peer IP Address.
+ 
+ 
+ss7 roles
+ Services offered by SS7 include the following:
+call setup, routing and teardown.
+call forwarding.
+automated voicemail.
+call waiting.
+conference calling.
+caller ID.
+subscriber authentication and extended billing.
+toll-free (800 and 888) and toll (900) calls.
+SMS
+mobile phone roaming and tracking
