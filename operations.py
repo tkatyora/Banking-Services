@@ -15,12 +15,12 @@ def operations():
 
         # dtarting the operations
         choose = input('''
-    1.Balance
-    2.Withdrawal
-    3.Deposit
-    4.Change Pin
-    5.Profile
-    : ''')
+        1.Balance
+        2.Withdrawal
+        3.Deposit
+        4.Change Pin
+        5.Profile
+        : ''')
         if choose == '1':
                 print('Your balance is $',content['balance'])
         elif choose == '2':
@@ -32,7 +32,7 @@ def operations():
                     json.dump(new_details,write_file)
                 print('Withdrwawll successfull!')
             else:
-                print('Insufficient funds!')
+                print('Insufficient funds!,You can withdraw $',int(amount_withdrwal))
 
         elif choose == '3':
             deposit = int(input('Enter amount to deposit :\n$'))
@@ -65,6 +65,6 @@ def operations():
         else:
             print('Invalid Option')
             return operations
-    except():
+    except(ValueError):
         print('Wrong key selected')
         sys.exit()

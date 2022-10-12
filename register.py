@@ -29,9 +29,11 @@ def registration():
        
         person =persons(name,surname,pincode,)
         details={'name': person.Name ,'surname':person.Surname,'pincode':person.Pincode,'balance':person.Balance}
+       
         print('\nYour entered details')
         for key,value in details.items():
-            print(key.title() ,':',str(value).title() )
+            if key != 'balance':
+             print(key.title() ,':',str(value).title() )
         choice = input('\nPress  1.Confirm   2.Cancel\n: ')
 
 

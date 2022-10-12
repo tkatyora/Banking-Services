@@ -24,25 +24,35 @@ try:
         print(name.title() ,' Enter Your pincode')
         pincode =  int(input(': '))
         if pincode == content['pincode']:
-            outloop = True
+            #outloop = False
+            pass
         else:
-            while pincode_try_count < pincode_try & pincode != content['pincode']: 
-                
-                print(name.title() ,' Renter Your pincode')
-                pincode =  int(input(': '))
-                pincode_try_count+=1
-                if pincode == content['pincode']:
-                    outloop == True
-                    break
-            else:
-                if outloop == True:
-                    print(str(content['name']).title() ,str(content['surname']).title(),'How can we help you today')
-                    print(operations.operations())
+            while  pincode != content['pincode'] and not(outloop)  : 
+                if pincode_try_count < pincode_try:
+                    attempts = pincode_try -pincode_try_count
+                    print('You have' ,attempts,'Attempts Left')
+                    pincode =  int(input('Renter Your pincode: '))
+                    pincode_try_count+=1
                 else:
-                    print('Pinblocked\n')  
-
+                    outloop = True
+                    break
+                
+        if outloop:
+            print('Pinblocked\n') 
+            
+        else:
+            print(str(content['name']).title() ,str(content['surname']).title(),'How can we help you today')
+            operations.operations()
+            print('\n')
+            
     else:
         print('\nHie',name.title() , 'Welcome Thanks for choosing us\nRegester your details,')
-        print(registration())
-except(ValueError):
+        registration()
+except(RuntimeError()):
     print('enter only digits')
+except(ValueError()):
+    print('enter only digits')
+    
+except(FileNotFoundError()):
+    print('enter only digits')
+    
